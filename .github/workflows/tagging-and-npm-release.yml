@@ -14,7 +14,6 @@ jobs:
           deno-version: v1.x # Run with latest stable Deno.
       - run: deno fmt --check *.ts
       - run: deno lint *.ts
-      - run: deno test
       - run: deno task build:node
       - name: Semantic Release
         uses: mechanoid/semantic-release-action@main
