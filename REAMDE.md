@@ -9,7 +9,7 @@ import {
   renderToStream,
   type ResponseStream,
 } from "voks";
-import voksExpress from "../../mod.ts";
+import voksExpress from "https://deno.land/x/voks_express/mod.ts";
 
 const app = express();
 app.use(
