@@ -1,18 +1,13 @@
-import express from "express";
-import {
-  html,
-  type HTMLTemplate,
-  renderToStream,
-  type ResponseStream,
-} from "voks";
-import voksExpress from "../../mod.ts";
+import express from 'express'
+import {html, renderToStream } from '@voks/voks'
+import voksExpress from "../../dist/mod.js"
 
 const app = express();
 app.use(
-  voksExpress<HTMLTemplate, ResponseStream>(renderToStream, { timeout: 50 }),
+  voksExpress(renderToStream, { timeout: 50 }),
 );
 
-app.get("/", (_req: express.Request, res: express.Response) => {
+app.get("/", (_req, res) => {
   const message = "Hello, World!";
 
   res.render(
@@ -24,7 +19,7 @@ app.get("/", (_req: express.Request, res: express.Response) => {
     <body>
       <h1>${message}</h1>
     </body>
-  </html>`,
+  </html> `
   );
 });
 

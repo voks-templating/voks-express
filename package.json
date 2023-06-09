@@ -1,0 +1,35 @@
+{
+  "name": "@voks/voks-express",
+  "version": "0.0.1",
+  "description": "voks-express is a middleware to register a render function on express response object",
+  "main": "dist/mod.js",
+  "types": "mod.ts",
+  "directories": {
+    "dist": "dist",
+    "scripts": "scripts"
+  },
+  "type": "module",
+  "files": [
+    "dist",
+    "LICENSE",
+    "README.md",
+    "*.ts"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:voks-templating/voks-express.git"
+  },
+  "author": "Falk Hoppe <falk@hey.com>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/voks-templating/voks-express/issues"
+  },
+  "homepage": "https://github.com/voks-templating/voks-express#readme",
+  "release": {
+    "branches": [
+      "main"
+    ],
+    "tagFormat": "${version}"
+  },
+  "private": false
+}

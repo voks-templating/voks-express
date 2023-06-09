@@ -1,0 +1,16 @@
+{
+  "name": "express-node",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node main.js"
+  },
+  "author": "Falk Hoppe <falk@hey.com>",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "@voks/voks": "^1.0.13",
+    "express": "^4.18.2"
+  }
+}
