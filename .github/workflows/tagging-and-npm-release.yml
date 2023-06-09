@@ -1,0 +1,23 @@
+name: GitHub Actions Demo
+run-name: ${{ github.actor }} is releasing the library
+on: [push]
+jobs:
+  Release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - uses: denoland/setup-deno@v1.1.1
+        with:
+          deno-version: v1.x # Run with latest stable Deno.
+      - run: deno fmt --check *.ts
+      - run: deno lint *.ts
+      - run: deno test
+      - run: deno task build:node
+      - name: Semantic Release
+        uses: mechanoid/semantic-release-action@main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
