@@ -1,0 +1,10 @@
+{
+  "nodeModulesDir": true,
+  "tasks": {
+    "start": "deno run --allow-net --allow-env --allow-read=. main.ts"
+  },
+  "imports": {
+    "express": "npm:express",
+    "voks": "https://deno.land/x/voks@1.0.13/mod.ts"
+  }
+}
