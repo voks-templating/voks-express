@@ -2,7 +2,8 @@
   "tasks": {
     "check": "deno lint && deno check *.ts **/*.ts",
     "build:node": "deno run -A ./scripts/build.node.ts",
-    "example:deno": "deno run --allow-net --allow-env --allow-read=. examples/express-deno/main.ts"
+    "example:deno": "deno run --allow-net --allow-env --allow-read=. examples/express-deno/main.ts",
+    "example:node": "node examples/express-node/main.js"
   },
   "imports": {
     "std/": "https://deno.land/std@0.190.0/",
