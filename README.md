@@ -33,3 +33,7 @@ app.get("/", (_req: express.Request, res: express.Response) => {
     </html>`);
 });
 ```
+
+## License
+
+[Apache-2.0](./LICENSE)
