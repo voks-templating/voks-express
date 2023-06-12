@@ -1,5 +1,9 @@
 ![voks web elements](./docs/voks_express.svg)
 
+## Release History
+
+https://github.com/voks-templating/voks-express/releases
+
 ## Usage
 
 ### deno
