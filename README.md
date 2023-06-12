@@ -15,4 +15,18 @@ const app = express();
 app.use(
   voksExpress<HTMLTemplate, ResponseStream>(renderToStream, { timeout: 50 }),
 );
+
+app.get("/", (_req: express.Request, res: express.Response) => {
+  const message = "Hello, World!";
+
+  res.render(html`<!DOCTYPE html>
+    <html>
+      <head>
+        <title>Deno Express App for testing VoksExpress</title>
+      </head>
+      <body>
+        <h1>${message}</h1>
+      </body>
+    </html>`);
+});
 ```
