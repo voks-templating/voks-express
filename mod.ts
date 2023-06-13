@@ -1,6 +1,6 @@
-type ExpressRequestLike = Record<string | number | symbol, never>;
-type ExpressNextFunctionLike = () => void;
-type ExpressResponseLike<T, R> = {
+export type ExpressRequestLike = Record<string | number | symbol, never>;
+export type ExpressNextFunctionLike = () => void;
+export type ExpressResponseLike<T, R> = {
   render: (template: T) => Promise<void>;
   end: () => void;
 } & R;
