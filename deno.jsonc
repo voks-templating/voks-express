@@ -11,6 +11,6 @@
     "esbuild": "https://deno.land/x/esbuild@v0.17.19/mod.js",
     "esbuild_deno_loader": "https://deno.land/x/esbuild_deno_loader@0.8.0/mod.ts",
     "express": "npm:express",
-    "voks": "https://deno.land/x/voks@1.0.13/mod.ts"
+    "voks": "https://deno.land/x/voks@2.0.0/mod.ts"
   }
 }
