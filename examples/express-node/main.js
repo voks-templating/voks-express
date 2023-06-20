@@ -1,6 +1,6 @@
-import express from 'express'
-import {html, renderToStream } from '@voks/voks'
-import voksExpress from "../../dist/mod.js"
+import express from "express";
+import { html, renderToStream } from "@voks/voks";
+import voksExpress from "../../dist/mod.js";
 
 const app = express();
 app.use(
@@ -19,7 +19,7 @@ app.get("/", (_req, res) => {
     <body>
       <h1>${message}</h1>
     </body>
-  </html> `
+  </html> `,
   );
 });
 
