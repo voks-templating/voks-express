@@ -3,6 +3,8 @@ export type ExpressNextFunctionLike = () => void;
 export type ExpressResponseLike<T, R> = {
   render: (template: T) => Promise<void>;
   end: () => void;
+  hasHeader: (headerName: string) => boolean;
+  setHeader: (headerName: string, headerValue: string) => void;
 } & R;
 
 export type RendererOptions = {
@@ -24,6 +26,10 @@ export default <HTMLTemplate, ResponseStream>(
   res.render = async (
     template: HTMLTemplate,
   ) => {
+    if (!res.hasHeader("Content-Type")) {
+      res.setHeader("Content-Type", "text/html");
+    }
+
     try {
       await Promise.race([
         new Promise((_resolve, reject) => {
