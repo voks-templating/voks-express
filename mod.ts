@@ -16,7 +16,7 @@ export default <HTMLTemplate, ResponseStream>(
     res: ExpressResponseLike<HTMLTemplate, ResponseStream>,
     template: HTMLTemplate,
   ) => Promise<void>,
-  { timeout = 1500 }: RendererOptions = {},
+  { timeout = 1 }: RendererOptions = {},
 ) =>
 (
   _req: ExpressRequestLike,
@@ -30,17 +30,19 @@ export default <HTMLTemplate, ResponseStream>(
       res.setHeader("Content-Type", "text/html");
     }
 
+    let timeoutCheck;
     try {
       await Promise.race([
         new Promise((_resolve, reject) => {
-          setTimeout(reject, timeout);
+          timeoutCheck = setTimeout(reject, timeout);
         }),
-        await renderToStream(res, template),
+        renderToStream(res, template),
       ]);
     } catch (e) {
-      console.log("rendering failed: ", e.message);
-      console.log(e.stack);
+      const error = new Error("Rendering failed!", { cause: e });
+      throw error;
     } finally {
+      clearTimeout(timeoutCheck);
       res.end();
     }
   };
