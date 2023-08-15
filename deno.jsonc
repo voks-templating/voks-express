@@ -1,16 +1,23 @@
 {
   "tasks": {
-    "check": "deno lint && deno check *.ts **/*.ts",
+    "check": "deno lint && deno check *.ts",
     "build:node": "deno run -A ./scripts/build.node.ts",
     "example:deno": "deno run --allow-net --allow-env --allow-read=. examples/express-deno/main.ts",
     "example:node": "node examples/express-node/main.js"
   },
   "imports": {
-    "std/": "https://deno.land/std@0.190.0/",
-    "asserts": "https://deno.land/std@0.190.0/testing/asserts.ts",
-    "esbuild": "https://deno.land/x/esbuild@v0.17.19/mod.js",
-    "esbuild_deno_loader": "https://deno.land/x/esbuild_deno_loader@0.8.0/mod.ts",
+    "std/": "https://deno.land/std@0.198.0/",
+    "asserts": "https://deno.land/std@0.198.0/testing/asserts.ts",
+    "esbuild": "https://deno.land/x/esbuild@v0.19.2/mod.js",
+    "esbuild_deno_loader": "https://deno.land/x/esbuild_deno_loader@0.8.1/mod.ts",
     "express": "npm:express",
-    "voks": "https://deno.land/x/voks@2.0.1/mod.ts"
-  }
+    "voks": "https://deno.land/x/voks@2.1.0/mod.ts"
+  },
+  "lint": {
+    "exclude": ["node_modules"]
+  },
+  "fmt": {
+    "exclude": ["node_modules"]
+  },
+  "nodeModulesDir": true
 }
